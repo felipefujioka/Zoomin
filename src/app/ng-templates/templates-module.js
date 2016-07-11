@@ -27,7 +27,9 @@ angular.module('module-templates', []).run(['$templateCache', function($template
     "    </nav>\n" +
     "  </div>\n" +
     "  <main class=\"mdl-layout__content\">\n" +
-    "    <div class=\"page-content\"><!-- Your content goes here --></div>\n" +
+    "    <div class=\"page-content\">\n" +
+    "      <img src=\"assets/images/pexels-photo.jpg\"></img>\n" +
+    "    </div>\n" +
     "  </main>\n" +
     "</div>\n"
   );

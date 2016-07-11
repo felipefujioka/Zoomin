@@ -147,7 +147,8 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: {
-          '<%= settings.dist %>/index.html': '<%= settings.src %>/index.html'
+          '<%= settings.dist %>/index.html': '<%= settings.src %>/index.html',
+          '<%= settings.dist %>/assets/images/': '<%= settings.src %>/**/*.jpg'
         }
       }
     },
