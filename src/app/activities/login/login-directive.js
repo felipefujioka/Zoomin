@@ -18,7 +18,6 @@ angular.module('zoominLogin')
       link: function(scope, iElement, iAttrs, controllers) {
         var layout = controllers[0];
 
-        layout.init(iElement);
       }
     };
   }])

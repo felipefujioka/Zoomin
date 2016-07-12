@@ -41,7 +41,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['<%= settings.src %>/app/**/*.css'],
-        tasks: ['cssmin', 'autoprefixer', 'notify:cssBuild']
+        tasks: ['autoprefixer', 'wiredep', 'injector', 'notify:cssBuild']
       },
       js: {
         files: [
@@ -124,7 +124,8 @@ module.exports = function(grunt) {
         src: [
           '<%= settings.src %>/app/**/*-config.js',
           '<%= settings.src %>/app/**/*.js',
-          '!<%= settings.src %>/app/**/*.spec.js'
+          '!<%= settings.src %>/app/**/*.spec.js',
+          '<%= settings.src %>/app/**/*.css'
         ],
         dest: '<%= settings.src %>/index.html'
       }
@@ -146,10 +147,14 @@ module.exports = function(grunt) {
 
     copy: {
       dist: {
-        files: {
-          '<%= settings.dist %>/index.html': '<%= settings.src %>/index.html',
-          '<%= settings.dist %>/assets/images/': '<%= settings.src %>/**/*.jpg'
-        }
+        files: [
+          {src: ['<%= settings.src %>/index.html'],
+            dest: '<%= settings.dist %>/index.html'},
+          {expand: true,
+            flatten: true,
+            src: ['<%= settings.src %>/**/*.jpg'],
+            dest: '<%= settings.dist %>/assets/images/'}
+        ]
       }
     },
 

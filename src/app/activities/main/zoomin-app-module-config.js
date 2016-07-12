@@ -5,5 +5,6 @@ angular.module('zoominApp',[
   'zoominLayout',
   'testModule',
   'module-templates',
-  'ui.router'
+  'ui.router',
+  'zoominUtils'
 ]);

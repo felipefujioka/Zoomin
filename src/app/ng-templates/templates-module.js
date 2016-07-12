@@ -26,9 +26,21 @@ angular.module('module-templates', []).run(['$templateCache', function($template
     "      <a class=\"mdl-navigation__link\" href=\"\">Logout</a>\n" +
     "    </nav>\n" +
     "  </div>\n" +
-    "  <main class=\"mdl-layout__content\">\n" +
-    "    <div class=\"page-content\">\n" +
-    "      <img src=\"assets/images/pexels-photo.jpg\"></img>\n" +
+    "  <main class=\"mdl-layout__content\" >\n" +
+    "    <div class=\"page-content\" ng-controller=\"zoominLogin\">\n" +
+    "      <div class=\"login-card mdl-card mdl-shadow--2dp\">\n" +
+    "        <div class=\"mdl-card__title mdl-card--expand\">\n" +
+    "          <h2 class=\"mdl-card__title-text\">Login</h2>\n" +
+    "        </div>\n" +
+    "        <div class=\"mdl-card__supporting-text\">\n" +
+    "          Enter using your facebook account.\n" +
+    "        </div>\n" +
+    "        <div class=\"mdl-card__actions mdl-card--border\">\n" +
+    "          <a class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" ng-click=\"login()\">\n" +
+    "            Enter\n" +
+    "          </a>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </main>\n" +
     "</div>\n"
