@@ -26,18 +26,23 @@
     <script src="vendor/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="vendor/bower_components/material-design-lite/material.min.js"></script>
     <script src="vendor/bower_components/lodash/lodash.js"></script>
+    <script src="vendor/bower_components/firebase/firebase.js"></script>
+    <script src="vendor/bower_components/angular-cookie/angular-cookie.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js app.js -->
     <!-- injector:js -->
     <script src="app/activities/login/login-module-config.js"></script>
     <script src="app/activities/main/zoomin-app-module-config.js"></script>
+    <script src="app/activities/your_photos/your-photos-module-config.js"></script>
     <script src="app/components/zoomin-layout/layout-module-config.js"></script>
     <script src="app/utils/util-module-config.js"></script>
     <script src="app/activities/login/login-controller.js"></script>
     <script src="app/activities/login/login-directive.js"></script>
     <script src="app/activities/main/main-controller.js"></script>
     <script src="app/activities/menu/menu-directive.js"></script>
+    <script src="app/activities/your_photos/your-photos-controller.js"></script>
+    <script src="app/activities/your_photos/your-photos-directive.js"></script>
     <script src="app/components/zoomin-layout/layout-directive.js"></script>
     <script src="app/config/config-module.js"></script>
     <script src="app/lab/test-directive.js"></script>
@@ -45,7 +50,6 @@
     <script src="app/utils/facebook-service.js"></script>
     <!-- endinjector -->
     <!-- endbuild -->
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {

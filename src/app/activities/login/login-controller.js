@@ -4,14 +4,16 @@ angular.module('zoominLogin')
   .controller('zoominLogin',[
     '$scope',
     'User',
-    function($scope, User){
-
+    '$state',
+    '$cookies',
+    function($scope, User, $state, $cookies){
       $scope.login = function(){
                         var provider = new firebase.auth.FacebookAuthProvider();
                         firebase.auth().signInWithPopup(provider).then(function(result) {
-                          var user = new User();
-                          user.token = result.credential.accessToken;
-                          user.user = result.user;
+                          $scope.token = result.credential.accessToken;
+                          $scope.user = result.user;
+                          $cookies.put('zoominFbToken', result.credential.accessToken);
+                          $state.go('your_photos');
                         }).catch(function(error) {
                           var errorCode = error.code;
                           var errorMessage = error.message;
