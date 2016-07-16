@@ -1,7 +1,21 @@
 <div ng-controller="zoominStats" class="zoomin-expand">
-  <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" ng-if="loading"></div>
+
   <div class="mdl-grid zoomin-expand">
-    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
-  </div>
+    <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--4-col">
+
+      <div class="card-content">
+        <div class="mdl-grid">
+          <div id="picture mdl-cell mdl-cell--1-col">
+            <img src="{{user.pictureUrl}}"></img>
+          </div>
+          <div id="personal-data-box mdl-cell mdl-cell--4-col">
+            <h6>Name</h6>
+            <p>{{user.name}}</p>
+            <h6>Birthdate</h6>
+            <p>{{user.birthday}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
