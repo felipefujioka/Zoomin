@@ -23,10 +23,36 @@ angular.module('module-templates', []).run(['$templateCache', function($template
   );
 
 
+  $templateCache.put('/app/activities/stats/stats.html',
+    "<div ng-controller=\"zoominStats\" class=\"zoomin-expand\">\n" +
+    "  <div id=\"p2\" class=\"mdl-progress mdl-js-progress mdl-progress__indeterminate\" ng-if=\"loading\"></div>\n" +
+    "  <div class=\"mdl-grid zoomin-expand\">\n" +
+    "    <div class=\"demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col\">\n" +
+    "  </div>\n" +
+    "  </div>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('/app/activities/your_photos/your-photos.html',
     "<div ng-controller=\"zoominYourPhotos\">\n" +
-    "  <!-- <p>Hello! {{displayName}}</p> -->\n" +
-    "  <p>token {{token}}</p>\n" +
+    "  <div id=\"p2\" class=\"mdl-progress mdl-js-progress mdl-progress__indeterminate\" ng-if=\"loading\"></div>\n" +
+    "  <div class=\"photo-container\">\n" +
+    "    <div class=\"photo-item\" ng-repeat=\"photo in photos\">\n" +
+    "      <style>\n" +
+    "        </style>\n" +
+    "\n" +
+    "        <div class=\"demo-card-image mdl-card mdl-shadow--2dp\"\n" +
+    "        style=\"height:{{getWHForPhoto(photo.images[0]).height}}px;\n" +
+    "        width:{{getWHForPhoto(photo.images[0]).width}}px\">\n" +
+    "        <img class=\"photo\" src=\"{{photo.images[0].source}}\"></img>\n" +
+    "          <div class=\"mdl-card__title mdl-card--expand\"></div>\n" +
+    "          <div class=\"mdl-card__actions\">\n" +
+    "            <span class=\"demo-card-image__filename\">{{photo.name}}</span>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
     "</div>\n"
   );
 
@@ -49,15 +75,16 @@ angular.module('module-templates', []).run(['$templateCache', function($template
     "  <div class=\"mdl-layout__drawer\">\n" +
     "    <span class=\"mdl-layout-title\">Menu</span>\n" +
     "    <nav class=\"mdl-navigation\">\n" +
-    "      <a class=\"mdl-navigation__link\" href=\"/your_photos\">Your photos</a>\n" +
-    "      <a class=\"mdl-navigation__link\" href=\"/friends_photos\">Friends photos</a>\n" +
+    "      <a class=\"mdl-navigation__link\" href=\"/#/your_photos\">Your photos</a>\n" +
+    "      <a class=\"mdl-navigation__link\" href=\"/#/friends_photos\">Friends photos</a>\n" +
+    "      <a class=\"mdl-navigation__link\" href=\"/#/stats\">Your stats</a>\n" +
     "\n" +
     "      <div class=\"mdl-layout-spacer\"></div>\n" +
     "      <a class=\"mdl-navigation__link\" href=\"\">Logout</a>\n" +
     "    </nav>\n" +
     "  </div>\n" +
     "  <main class=\"mdl-layout__content\" >\n" +
-    "    <div class=\"page-content\" ui-view>\n" +
+    "    <div class=\"page-content zoomin-expand\" ui-view>\n" +
     "\n" +
     "\n" +
     "    </div>\n" +

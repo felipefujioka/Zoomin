@@ -1,12 +1,12 @@
-angular.module('zoominYourPhotos',[
+angular.module('zoominStats',[
   'ui.router'
 ])
 .config([
   '$stateProvider',
   function($stateProvider) {
-    $stateProvider.state('your_photos', {
-      url:      '/your_photos',
-      template: '<zoomin-your-photos></zoomin-your-photos>',
+    $stateProvider.state('stats', {
+      url:      '/stats',
+      template: '<zoomin-stats></zoomin-stats>',
       onEnter: ['$stateParams', '$state', function($stateParams, $state) {
         // console.log('Your Photos module loaded');
       }]

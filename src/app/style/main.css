@@ -2,3 +2,51 @@ html body {
   height: 100%;
   width: 100%;
 }
+
+.zoomin-expand {
+  width: 100%;
+  height: 100%;
+}
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.photo-item {
+  margin: 10px;
+}
+
+.card-photo {
+  overflow: auto;
+}
+
+.demo-card-image.mdl-card {
+  background: center;
+}
+.demo-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.demo-card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.stats-container {
+  width:100%;
+  height: 100%;
+  margin: 16px;
+}

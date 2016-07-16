@@ -1,4 +1,19 @@
 <div ng-controller="zoominYourPhotos">
-  <!-- <p>Hello! {{displayName}}</p> -->
-  <p>token {{token}}</p>
+  <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" ng-if="loading"></div>
+  <div class="photo-container">
+    <div class="photo-item" ng-repeat="photo in photos">
+      <style>
+        </style>
+
+        <div class="demo-card-image mdl-card mdl-shadow--2dp"
+        style="height:{{getWHForPhoto(photo.images[0]).height}}px;
+        width:{{getWHForPhoto(photo.images[0]).width}}px">
+        <img class="photo" src="{{photo.images[0].source}}"></img>
+          <div class="mdl-card__title mdl-card--expand"></div>
+          <div class="mdl-card__actions">
+            <span class="demo-card-image__filename">{{photo.name}}</span>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>

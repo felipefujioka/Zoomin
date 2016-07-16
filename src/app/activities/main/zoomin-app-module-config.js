@@ -3,6 +3,7 @@
 angular.module('zoominApp',[
   'zoominLogin',
   'zoominYourPhotos',
+  'zoominStats',
   'zoominLayout',
   'testModule',
   'module-templates',
