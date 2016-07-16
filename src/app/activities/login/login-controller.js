@@ -11,6 +11,7 @@ angular.module('zoominLogin')
                         provider.addScope('user_birthday');
                         provider.addScope('user_photos');
                         provider.addScope('user_friends');
+                        provider.addScope('user_posts');
                         firebase.auth().signInWithPopup(provider).then(function(result) {
                           $scope.token = result.credential.accessToken;
                           $scope.user = result.user;
