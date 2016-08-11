@@ -1,5 +1,5 @@
 angular.module('config', [])
 
-.constant('TptEnv', {domain:'localhost:8080'})
+.constant('TptEnv', {domain:'https://zoomin-4c0b1.firebaseapp.com/'})
 
 ;

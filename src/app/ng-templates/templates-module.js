@@ -125,6 +125,14 @@ angular.module('module-templates', []).run(['$templateCache', function($template
   );
 
 
+  $templateCache.put('/app/activities/share_ride/share-ride.html',
+    "<div class=\"map-container\" ng-controller=\"zoominShareRide\">\n" +
+    "  <h1>Find a ride</h1>\n" +
+    "  <map-canvas id=\"map\" style=\"width: 50%; height: 50%;\"></map-canvas>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('/app/activities/stats/stats.html',
     "<div ng-controller=\"zoominStats\" class=\"zoomin-expand\">\n" +
     "\n" +
@@ -194,6 +202,7 @@ angular.module('module-templates', []).run(['$templateCache', function($template
     "      <a class=\"mdl-navigation__link\" href=\"/#/your_photos\">Your photos</a>\n" +
     "      <a class=\"mdl-navigation__link\" href=\"/#/friends_photos\">Friends photos</a>\n" +
     "      <a class=\"mdl-navigation__link\" href=\"/#/stats\">Your stats</a>\n" +
+    "      <a class=\"mdl-navigation__link\" href=\"/#/share_ride\">Share a ride</a>\n" +
     "\n" +
     "      <div class=\"mdl-layout-spacer\"></div>\n" +
     "      <a class=\"mdl-navigation__link\" href=\"\">Logout</a>\n" +
