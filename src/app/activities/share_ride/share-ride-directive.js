@@ -6,6 +6,7 @@ angular.module('zoominShareRide')
     return {
       restrict: 'E',
       templateUrl: '/app/activities/share_ride/share-ride.html',
+      replace: true,
       controller:   function() {
         var self = this;
 
@@ -15,11 +16,7 @@ angular.module('zoominShareRide')
         'zoominShareRide'
       ],
       link: function(scope, element) {
-        var mapOptions = {
-          center: { lat: -34.397, lng: 150.644},
-          zoom: 8
-        };
-        new google.maps.Map(element[0], mapOptions);
+
       }
     };
   }]);

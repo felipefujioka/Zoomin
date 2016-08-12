@@ -3,6 +3,11 @@ html body {
   width: 100%;
 }
 
+.main-content {
+  width: 100%;
+  height: 100%;
+}
+
 .zoomin-expand {
   width: 100%;
   height: 100%;

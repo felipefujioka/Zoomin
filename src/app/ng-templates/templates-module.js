@@ -127,8 +127,28 @@ angular.module('module-templates', []).run(['$templateCache', function($template
 
   $templateCache.put('/app/activities/share_ride/share-ride.html',
     "<div class=\"map-container\" ng-controller=\"zoominShareRide\">\n" +
-    "  <h1>Find a ride</h1>\n" +
-    "  <map-canvas id=\"map\" style=\"width: 50%; height: 50%;\"></map-canvas>\n" +
+    "  <div class=\"mdl-card mdl-shadow--2dp configuration-card\">\n" +
+    "    <div class=\"configuration-panel\">\n" +
+    "      <form action=\"#\">\n" +
+    "        <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\n" +
+    "          <input\n" +
+    "                  ng-model=\"from\"\n" +
+    "                  class=\"mdl-textfield__input\"\n" +
+    "                  type=\"text\"\n" +
+    "                  id=\"FromInput\">\n" +
+    "          <label class=\"mdl-textfield__label\" for=\"FromInput\">From</label>\n" +
+    "        </div>\n" +
+    "        <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\n" +
+    "          <input class=\"mdl-textfield__input\" type=\"text\" id=\"ToInput\">\n" +
+    "          <label class=\"mdl-textfield__label\" for=\"ToInput\">To</label>\n" +
+    "        </div>\n" +
+    "      </form>\n" +
+    "      <p>{{from}}</p>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "  <div class=\"mdl-card mdl-shadow--2dp map-card\">\n" +
+    "    <map-canvas class=\"map-canvas\" id=\"map\"></map-canvas>\n" +
+    "  </div>\n" +
     "</div>\n"
   );
 
@@ -208,7 +228,7 @@ angular.module('module-templates', []).run(['$templateCache', function($template
     "      <a class=\"mdl-navigation__link\" href=\"\">Logout</a>\n" +
     "    </nav>\n" +
     "  </div>\n" +
-    "  <main class=\"mdl-layout__content\" >\n" +
+    "  <main class=\"main-content\" >\n" +
     "    <div class=\"page-content zoomin-expand\" ui-view>\n" +
     "\n" +
     "\n" +

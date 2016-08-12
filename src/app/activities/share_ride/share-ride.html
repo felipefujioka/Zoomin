@@ -1,4 +1,24 @@
 <div class="map-container" ng-controller="zoominShareRide">
-  <h1>Find a ride</h1>
-  <map-canvas id="map" style="width: 50%; height: 50%;"></map-canvas>
+  <div class="mdl-card mdl-shadow--2dp configuration-card">
+    <div class="configuration-panel">
+      <form action="#">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input
+                  ng-model="from"
+                  class="mdl-textfield__input"
+                  type="text"
+                  id="FromInput">
+          <label class="mdl-textfield__label" for="FromInput">From</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="ToInput">
+          <label class="mdl-textfield__label" for="ToInput">To</label>
+        </div>
+      </form>
+      <p>{{from}}</p>
+    </div>
+  </div>
+  <div class="mdl-card mdl-shadow--2dp map-card">
+    <map-canvas class="map-canvas" id="map"></map-canvas>
+  </div>
 </div>
