@@ -143,11 +143,22 @@ angular.module('module-templates', []).run(['$templateCache', function($template
     "          <label class=\"mdl-textfield__label\" for=\"ToInput\">To</label>\n" +
     "        </div>\n" +
     "      </form>\n" +
-    "      <p>{{from}}</p>\n" +
+    "      <ul class=\"mdl-list\">\n" +
+    "        <li class=\"mdl-list__item mdl-list__item--three-line\" ng-repeat=\"address in addresses\" ng-click=\"selectRow(address)\">\n" +
+    "          <span class=\"mdl-list__item-primary-content\">\n" +
+    "            <i class=\"material-icons\">location_on</i>\n" +
+    "            <span>{{address.address_components[0].short_name}}</span>\n" +
+    "            <span class=\"mdl-list__item-text-body\">\n" +
+    "              {{address.address_components[1].short_name}}-{{address.address_components[3].short_name}}-\n" +
+    "              {{address.address_components[4].short_name}}-{{address.address_components[5].short_name}}\n" +
+    "            </span>\n" +
+    "          </span>\n" +
+    "        </li>\n" +
+    "      </ul>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "  <div class=\"mdl-card mdl-shadow--2dp map-card\">\n" +
-    "    <map-canvas class=\"map-canvas\" id=\"map\"></map-canvas>\n" +
+    "    <div class=\"map-canvas\" id=\"map\"></div>\n" +
     "  </div>\n" +
     "</div>\n"
   );

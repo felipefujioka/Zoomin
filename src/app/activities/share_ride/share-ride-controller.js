@@ -12,20 +12,31 @@ angular.module('zoominShareRide')
       var self = this;
       self.geocoder = new google.maps.Geocoder();
 
+      var mapOptions = {
+        center: { lat: -34.397, lng: 150.644},
+        zoom: 8
+      };
+
+      self.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+      $scope.selectRow = function(address) {
+        self.map.setCenter(address.geometry.location);
+        var marker = new google.maps.Marker({
+            map: self.map,
+            position: address.geometry.location
+        });
+        self.map
+      }
+
       $scope.$watch('from', function(newValue, oldValue){
         var result = self.geocoder.geocode({address:newValue}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
-            // map.setCenter(results[0].geometry.location);
-            // var marker = new google.maps.Marker({
-            //     map: map,
-            //     position: results[0].geometry.location
-            // });
-            console.log(results[0]);
+
+            $scope.addresses = results;
           } else {
-            alert("Geocode was not successful for the following reason: " + status);
+            // alert("Geocode was not successful for the following reason: " + status);
           }
         });
-        console.log(result);
       });
 
     }]);
