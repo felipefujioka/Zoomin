@@ -139,12 +139,17 @@ angular.module('module-templates', []).run(['$templateCache', function($template
     "          <label class=\"mdl-textfield__label\" for=\"FromInput\">From</label>\n" +
     "        </div>\n" +
     "        <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\n" +
-    "          <input class=\"mdl-textfield__input\" type=\"text\" id=\"ToInput\">\n" +
+    "          <input ng-model=\"to\"\n" +
+    "                 class=\"mdl-textfield__input\"\n" +
+    "                 type=\"text\"\n" +
+    "                 id=\"ToInput\">\n" +
     "          <label class=\"mdl-textfield__label\" for=\"ToInput\">To</label>\n" +
     "        </div>\n" +
     "      </form>\n" +
+    "      <div class=\"address-options\">\n" +
+    "      <span>From</span>\n" +
     "      <ul class=\"mdl-list\">\n" +
-    "        <li class=\"mdl-list__item mdl-list__item--three-line\" ng-repeat=\"address in addresses\" ng-click=\"selectRow(address)\">\n" +
+    "        <li class=\"mdl-list__item mdl-list__item--three-line\" ng-repeat=\"address in fromAddresses\" ng-click=\"selectFrom(address)\">\n" +
     "          <span class=\"mdl-list__item-primary-content\">\n" +
     "            <i class=\"material-icons\">location_on</i>\n" +
     "            <span>{{address.address_components[0].short_name}}</span>\n" +
@@ -156,6 +161,25 @@ angular.module('module-templates', []).run(['$templateCache', function($template
     "        </li>\n" +
     "      </ul>\n" +
     "    </div>\n" +
+    "    <div class=\"address-options\">\n" +
+    "      <span>To</span>\n" +
+    "      <ul class=\"mdl-list\">\n" +
+    "        <li class=\"mdl-list__item mdl-list__item--three-line\" ng-repeat=\"address in toAddresses\" ng-click=\"selectTo(address)\">\n" +
+    "          <span class=\"mdl-list__item-primary-content\">\n" +
+    "            <i class=\"material-icons\">location_on</i>\n" +
+    "            <span>{{address.address_components[0].short_name}}</span>\n" +
+    "            <span class=\"mdl-list__item-text-body\">\n" +
+    "              {{address.address_components[1].short_name}}-{{address.address_components[3].short_name}}-\n" +
+    "              {{address.address_components[4].short_name}}-{{address.address_components[5].short_name}}\n" +
+    "            </span>\n" +
+    "          </span>\n" +
+    "        </li>\n" +
+    "      </ul>\n" +
+    "    </div>\n" +
+    "    </div>\n" +
+    "    <button class=\"mdl-button mdl-js-button mdl-js-ripple-effect\" ng-click=\"save()\">\n" +
+    "      SAVE\n" +
+    "    </button>\n" +
     "  </div>\n" +
     "  <div class=\"mdl-card mdl-shadow--2dp map-card\">\n" +
     "    <div class=\"map-canvas\" id=\"map\"></div>\n" +

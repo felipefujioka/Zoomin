@@ -42,3 +42,11 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+
+.address-form {
+  
+}
+
+.adress-options {
+  max-height: 40%;
+}
